@@ -1,10 +1,10 @@
 
 module ProgramCounter
-       #(WIDTH = 32)
+       #( parameter WIDTH = 32)
        (
         input clk,reset,
         input [WIDTH-1:0] pc_in,
-        input [WIDTH-1:0] pc_out,
+        output [WIDTH-1:0] pc_out
        );
 
 
