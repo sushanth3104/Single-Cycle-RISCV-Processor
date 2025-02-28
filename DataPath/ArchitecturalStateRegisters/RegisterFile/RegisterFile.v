@@ -5,6 +5,7 @@ module RegisterFile
      input CLK,
      input WE3,
      output [DATA_WIDTH-1:0]RD1,RD2 );
+     integer i;
 
      reg [DATA_WIDTH-1:0] regfile[2**ADDR_WIDTH-1:0];
 
