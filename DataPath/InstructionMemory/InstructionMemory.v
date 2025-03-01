@@ -6,7 +6,7 @@ module InstructionMemory (
     
     // For simplicty taking smaller memory
 
-    reg [7:0] insts [127:0];
+    reg [7:0] insts [(2**10)-1:0];
     
     assign inst = (readAddr >= 128) ? 32'b0 : {insts[readAddr+3], insts[readAddr + 2], insts[readAddr + 1], insts[readAddr]};
 
