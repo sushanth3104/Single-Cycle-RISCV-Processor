@@ -1,4 +1,4 @@
-module #(parameter WIDTH = 32)
+module ALU #(parameter WIDTH = 32)
 (
     input [WIDTH-1:0]SrcA,SrcB,
     input [3:0]ALUOp, // Remember to change this
