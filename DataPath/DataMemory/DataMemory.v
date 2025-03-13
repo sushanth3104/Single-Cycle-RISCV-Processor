@@ -7,7 +7,7 @@ module DataMemory
      output [Width-1:0]RD
     );
 
-    reg [7:0] mem[(2**10)-1:0]; // Little Endian - Less memory is chosen for simulation
+    reg [7:0] mem[255:0]; // Little Endian - Less memory is chosen for simulation
 
     always @(posedge CLK)
     begin
@@ -15,7 +15,7 @@ module DataMemory
             {mem[A+3],mem[A+2],mem[A+1],mem[A]} <= WD;
     end
 
-    assign RD =  {mem[A+3],mem[A+2],mem[A+1],mem[A]};
+    assign RD =  A > 255 ? 0 : {mem[A+3],mem[A+2],mem[A+1],mem[A]};
 
 
 endmodule

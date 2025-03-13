@@ -16,7 +16,6 @@ InstructionMemory im (
 initial begin
     $dumpfile("tb.vcd");
     $dumpvars(0, tb);
-    $readmemb("TEST_INSTRUCTIONS.dat", im.insts,0,127);
     readAddr = 0;
     #10;
     readAddr = 4;
