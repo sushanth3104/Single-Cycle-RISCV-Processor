@@ -1,7 +1,7 @@
 module ALU #(parameter WIDTH = 32)
 (
     input [WIDTH-1:0]SrcA,SrcB,
-    input [3:0]ALUOp, // Remember to change this
+    input [3:0]ALUCtl, // Remember to change this
     output [WIDTH-1:0]ALUResult,
     output Zero;
 
@@ -21,7 +21,6 @@ module ALU #(parameter WIDTH = 32)
     parameter AND = 9;
 
     //  For Branch 
-
     parameter BNE = 10;
     parameter BLT = 11;
     parameter BGE = 12;
@@ -33,7 +32,7 @@ module ALU #(parameter WIDTH = 32)
 
     always@(*) begin
 
-        case(ALUOp) 
+        case(ALUCtl) 
 
             ADD :temp = SrcA + SrcB ;
             SUB :temp = SrcA - SrcB ;
