@@ -35,22 +35,22 @@ module ALU #(parameter WIDTH = 32)
 
         case(ALUOp) 
 
-            ADD : ALUResult = SrcA + SrcB ;
-            SUB : ALUResult = SrcA - SrcB ;
-            SLL : ALUResult = SrcA << SrcB ;
-            SLT : ALUResult = $signed(SrcA) < $signed(SrcB) ;
-            SLTU : ALUResult = SrcA < SrcB ;
-            XOR : ALUResult = SrcA ^ SrcB ;
-            SRL : ALUResult = SrcA >> SrcB ;
-            SRA : ALUResult = SrcA >>> SrcB ;
-            OR : ALUResult = SrcA | SrcB ;
-            AND : ALUResult = SrcA & SrcB ;
-            BNE : ALUResult = (SrcA == SrcB);
-            BLT : ALUResult = $signed(SrcA) < $signed(SrcB);
-            BGE : ALUResult = $signed(SrcA) >= $signed(SrcB);
-            BLTU : ALUResult = SrcA < SrcB;
-            BGEU : ALUResult = SrcA >= SrcB;
-            default : ALUResult = 0;
+            ADD :temp = SrcA + SrcB ;
+            SUB :temp = SrcA - SrcB ;
+            SLL :temp = SrcA << SrcB ;
+            SLT :temp = $signed(SrcA) < $signed(SrcB) ;
+            SLTU :temp = SrcA < SrcB ;
+            XOR :temp = SrcA ^ SrcB ;
+            SRL :temp = SrcA >> SrcB ;
+            SRA :temp = SrcA >>> SrcB ;
+            OR :temp = SrcA | SrcB ;
+            AND :temp = SrcA & SrcB ;
+            BNE :temp = (SrcA == SrcB);
+            BLT :temp = $signed(SrcA) < $signed(SrcB);
+            BGE :temp = $signed(SrcA) >= $signed(SrcB);
+            BLTU :temp = SrcA < SrcB;
+            BGEU :temp = SrcA >= SrcB;
+            default :temp = 0;
 
 
         endcase
