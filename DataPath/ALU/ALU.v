@@ -46,10 +46,10 @@ module ALU #(parameter WIDTH = 32)
             OR :temp = SrcA | SrcB ;
             AND :temp = SrcA & SrcB ;
             BNE :temp = (SrcA == SrcB);
-            BLT :temp = $signed(SrcA) < $signed(SrcB);
-            BGE :temp = $signed(SrcA) >= $signed(SrcB);
-            BLTU :temp = SrcA < SrcB;
-            BGEU :temp = SrcA >= SrcB;
+            BLT :temp = ($signed(SrcA) < $signed(SrcB)) ? 0 : 1 ;
+            BGE :temp = ($signed(SrcA) >= $signed(SrcB)) ? 0 : 1 ;
+            BLTU :temp = (SrcA < SrcB)? 0 : 1 ;
+            BGEU :temp = (SrcA >= SrcB)? 0 : 1 ;
             default :temp = 0;
 
 
