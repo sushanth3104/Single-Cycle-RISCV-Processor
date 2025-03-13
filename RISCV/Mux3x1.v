@@ -1,8 +1,8 @@
-module #(parameter WIDTH = 32) Mux3x1 (
+module  Mux3x1 #(parameter WIDTH = 32) (
     input [WIDTH-1:0] A,
     input [WIDTH-1:0] B,
     input [WIDTH-1:0] C,
-    input [2:0] S,
+    input [1:0] S,
     output [WIDTH-1:0] Y
 );
 
@@ -12,9 +12,9 @@ module #(parameter WIDTH = 32) Mux3x1 (
 
     always @(*) begin
         case(S)
-            3'b000: temp = A;
-            3'b001: temp = B;
-            3'b010: temp = C;
+            2'b00: temp = A;
+            2'b01: temp = B;
+            2'b10: temp = C;
             default: temp = 0;
         endcase
     end

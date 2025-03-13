@@ -1,6 +1,3 @@
-`include "../ALUDecoder/ALUDecoder.v"
-`include "../MainDecoder/MainDecoder.v"
-
 module ControlUnit(
     input [6:0]opcode,
     input [2:0]func3,
@@ -23,7 +20,7 @@ MainDecoder MainDecoder(
     .Jump(Jump),
     .MemWrite(MemWrite),
     .ALUSrc(ALUSrc),
-    .RegWrite(RegWrite),
+    .RegWrite(RegWrite)
 );
 
 ALUDecoder ALUDecoder(

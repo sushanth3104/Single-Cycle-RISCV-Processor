@@ -3,7 +3,7 @@ module ALU #(parameter WIDTH = 32)
     input [WIDTH-1:0]SrcA,SrcB,
     input [3:0]ALUCtl, // Remember to change this
     output [WIDTH-1:0]ALUResult,
-    output Zero;
+    output Zero
 
 );
 

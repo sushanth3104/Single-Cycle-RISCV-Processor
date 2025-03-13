@@ -20,7 +20,7 @@ def convert_to_little_endian(input_file, output_file):
                 outfile.write(byte + '\n')
 
 def main():
-    input_file = 'instructionsInput.txt'  # Change as needed
+    input_file = 'Input.txt'  # Change as needed
     output_file = 'instructions.txt'  # Change as needed
     convert_to_little_endian(input_file, output_file)
     print(f"Conversion complete. Output written to {output_file}")
