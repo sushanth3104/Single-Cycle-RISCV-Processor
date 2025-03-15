@@ -41,7 +41,7 @@ module ALU #(parameter WIDTH = 32)
             SLTU :temp = SrcA < SrcB ;
             XOR :temp = SrcA ^ SrcB ;
             SRL :temp = SrcA >> SrcB ;
-            SRA :temp = SrcA >>> SrcB ;
+            SRA :temp = $signed(SrcA) >>> SrcB ;
             OR :temp = SrcA | SrcB ;
             AND :temp = SrcA & SrcB ;
             BNE :temp = (SrcA == SrcB);

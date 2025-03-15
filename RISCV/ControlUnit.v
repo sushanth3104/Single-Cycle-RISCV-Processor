@@ -3,7 +3,8 @@ module ControlUnit(
     input [2:0]func3,
     input func7_5,Zero,
     output [3:0]ALUCtl,
-    output [1:0]ResultSrc,ImmSrc,
+    output [1:0]ResultSrc,
+    output [1:0]ImmSrc,
     output MemWrite,ALUSrc,RegWrite,PCSrc
 );
 
