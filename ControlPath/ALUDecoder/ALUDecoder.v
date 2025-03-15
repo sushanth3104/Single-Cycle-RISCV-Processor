@@ -10,7 +10,7 @@ assign ALUCtl = temp;
 
 // Issued by the Control Unit - ALUOp
 parameter Load_Store_Type = 0;
-parameter B_Type = 1;
+parameter Branch_Type = 1;
 parameter IR_Type = 2;
 
 
@@ -39,7 +39,7 @@ always @(*) begin
 
         Load_Store_Type : temp = ADD;
 
-        B_Type: begin
+        Branch_Type: begin
             case(func3)
                 3'b000: temp = SUB;
                 3'b001: temp = BNE;

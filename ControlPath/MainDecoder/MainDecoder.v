@@ -6,7 +6,7 @@ module MainDecoder(
 
 // For ALUOp
 parameter Load_Store_Type = 0;
-parameter B_Type = 1;
+parameter Branch_Type = 1;
 parameter IR_Type = 2;
 
 // For Immediate Extender
@@ -18,18 +18,18 @@ parameter J_Type = 3;
 
 
 // Opcodes
-parameter Load = 3;
-parameter Store = 35;
-parameter Branch = 99;
-parameter I_Type = 19;
-parameter R_Type = 51;
-parameter J_Type = 111;
+parameter LoadInst = 3;
+parameter StoreInst = 35;
+parameter BranchInst = 99;
+parameter I_TypeInst = 19;
+parameter R_TypeInst = 51;
+parameter J_TypeInst = 111;
 
 always@(*)begin
 
     case(opcode)
 
-        Load:begin
+        LoadInst:begin
 
             ResultSrc = 2'b01;
             ImmSrc = I_Type;
@@ -42,7 +42,7 @@ always@(*)begin
 
         end
 
-        Store:begin
+        StoreInst:begin
             
             ResultSrc = 2'b00;
             ImmSrc = S_Type;
@@ -55,11 +55,11 @@ always@(*)begin
 
         end
 
-        Branch:begin
+        BranchInst:begin
 
             ResultSrc = 2'b00;
             ImmSrc = B_Type;
-            ALUOp = B_Type;
+            ALUOp = Branch_Type;
             Branch = 1;
             Jump = 0;
             MemWrite = 0;
@@ -68,7 +68,7 @@ always@(*)begin
 
         end
 
-        I_Type:begin
+        I_TypeInst:begin
 
             ResultSrc = 2'b00;
             ImmSrc = I_Type;
@@ -81,7 +81,7 @@ always@(*)begin
 
         end
 
-        R_Type:begin
+        R_TypeInst:begin
 
             ResultSrc = 2'b00;
             ImmSrc = 0;
@@ -94,7 +94,7 @@ always@(*)begin
 
         end
 
-        J_Type:begin
+        J_TypeInst:begin
 
             ResultSrc = 2'b10;
             ImmSrc = J_Type;

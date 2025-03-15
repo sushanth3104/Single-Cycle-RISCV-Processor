@@ -1,9 +1,9 @@
 module ALU #(parameter WIDTH = 32)
 (
     input [WIDTH-1:0]SrcA,SrcB,
-    input [3:0]ALUCtl, // Remember to change this
+    input [3:0]ALUCtl, 
     output [WIDTH-1:0]ALUResult,
-    output Zero;
+    output Zero
 
 );
 
@@ -41,7 +41,7 @@ module ALU #(parameter WIDTH = 32)
             SLTU :temp = SrcA < SrcB ;
             XOR :temp = SrcA ^ SrcB ;
             SRL :temp = SrcA >> SrcB ;
-            SRA :temp = SrcA >>> SrcB ;
+            SRA :temp = $signed(SrcA) >>> SrcB ;
             OR :temp = SrcA | SrcB ;
             AND :temp = SrcA & SrcB ;
             BNE :temp = (SrcA == SrcB);
